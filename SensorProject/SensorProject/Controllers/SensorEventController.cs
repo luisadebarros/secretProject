@@ -1,5 +1,5 @@
-
 using Microsoft.AspNetCore.Mvc;
+using SensorProject.DataBase;
 using SensorProject.Model;
 
 namespace SensorProject.Controllers;
@@ -7,17 +7,17 @@ namespace SensorProject.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class SensorEventController : ControllerBase {
-    private readonly InMemoryRepository _context;
+    private readonly DatabaseContext _context;
 
-    public SensorEventController(InMemoryRepository inMemoryRepository) {
-        _context = inMemoryRepository;
+    public SensorEventController(DatabaseContext dataBaseContext) {
+        _context = dataBaseContext;
     }
 
     #region GetAsync
     [HttpGet(Name = "GetSensorAsync")]
     public IEnumerable<SensorEvent> GetAllAsync() {
-
-        return _context.GetAll();
+        return _context.SensorEvent.ToList();
+    
     }
 
     #endregion
@@ -25,61 +25,53 @@ public class SensorEventController : ControllerBase {
     #region Save
     [HttpPost(Name = "SaveSensorAsync")]
     public ActionResult SaveAsync(SensorRequest sensorEvent) {
-        var hasTag = sensorEvent.Tag.Split('.').Count();
+        var hasValue = sensorEvent.Value.Count();
         var sensorObject = new SensorEvent();
 
-        if (hasTag > 0)
+
+        if (hasValue < 1)
         {
             sensorObject = new SensorEvent {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Tag = sensorEvent.Tag,
-                Sensor = {
-                    Region = "Erro",
-                    SensorName = "Erro"
-                },
+                Region = sensorEvent.Tag.Split(".")[1],
+                SensorName = sensorEvent.Tag.Split(".")[2],
                 Value = sensorEvent.Value,
                 Status = "Erro"
             };
 
             sensorObject.TimeStamp = sensorObject.UnixToTimeStamp(sensorEvent.TimeStamp);
-           
+
         } 
         else
-        { 
+        {
             sensorObject = new SensorEvent {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Tag = sensorEvent.Tag,
-                Sensor = {
-                    Region = sensorEvent.Tag.Split(".")[0],
-                    SensorName = sensorEvent.Tag[1].ToString()
-                },
+                Region = sensorEvent.Tag.Split(".")[1],
+                SensorName = sensorEvent.Tag.Split(".")[2],
                 Value = sensorEvent.Value,
                 Status = "Processado"
             };
 
-            sensorObject.TimeStamp =  sensorObject.UnixToTimeStamp(sensorEvent.TimeStamp);
+            sensorObject.TimeStamp = sensorObject.UnixToTimeStamp(sensorEvent.TimeStamp);
         }
 
 
         try
         {
-          _context.Insert(sensorObject);
-        } catch (Exception)
-        {
+            _context.SensorEvent.Add(sensorObject);
+            _context.SaveChangesAsync();
 
-            return BadRequest();
+        } 
+        catch (Exception)
+        {
+            return BadRequest("Occurred an error in the request, please try again!");
         }
 
-        return StatusCode(200);
+        return Ok("Object save in the database with sucess!");
     }
 
-    #endregion
-
-    #region GetBySensor
-    [HttpGet("{sensor}", Name = "GetBySensor")]
-    public Task<ActionResult<SensorEvent>> GetBySensor(string sensor) {
-        throw new NotImplementedException();
-    }
     #endregion
 
 }

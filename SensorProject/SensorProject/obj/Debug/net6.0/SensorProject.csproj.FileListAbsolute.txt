@@ -56,4 +56,3 @@ C:\junior-analyst\SensorProject\SensorProject\obj\Debug\net6.0\SensorProject.csp
 C:\junior-analyst\SensorProject\SensorProject\obj\Debug\net6.0\SensorProject.genruntimeconfig.cache
 C:\junior-analyst\SensorProject\SensorProject\obj\Debug\net6.0\ref\SensorProject.dll
 C:\junior-analyst\SensorProject\SensorProject\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\junior-analyst\SensorProject\SensorProject\bin\Debug\net6.0\AutoMapper.dll

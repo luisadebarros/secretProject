@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorProject", "SensorProject\SensorProject.csproj", "{F2249C47-9CB5-4FCE-AAEC-7963174AD515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SensorProject", "SensorProject\SensorProject.csproj", "{F2249C47-9CB5-4FCE-AAEC-7963174AD515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSensorEvent", "TestSensorEvent\TestSensorEvent.csproj", "{C86EB172-F22C-4DF1-9692-126C583AA852}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F2249C47-9CB5-4FCE-AAEC-7963174AD515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2249C47-9CB5-4FCE-AAEC-7963174AD515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2249C47-9CB5-4FCE-AAEC-7963174AD515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C86EB172-F22C-4DF1-9692-126C583AA852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86EB172-F22C-4DF1-9692-126C583AA852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86EB172-F22C-4DF1-9692-126C583AA852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86EB172-F22C-4DF1-9692-126C583AA852}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

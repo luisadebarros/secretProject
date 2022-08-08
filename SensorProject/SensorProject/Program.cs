@@ -1,20 +1,20 @@
-
-using SensorProject;
-
+using Microsoft.EntityFrameworkCore;
+using SensorProject.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC Framework
-builder.Services.AddMvc();
-
 // Add services to the container.
+
+// Add DbInMemory
+builder.Services.AddDbContext<DatabaseContext>(opts =>
+    opts.UseInMemoryDatabase("sensor_database"));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,14 +30,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-static void Main(string[] args) {
-    CreateHostBuilder(args).Build().Run();
-}
-
-static IHostBuilder CreateHostBuilder(string[] args) =>
-   Host.CreateDefaultBuilder(args)
-       .ConfigureWebHostDefaults(webBuilder => {
-           webBuilder.UseStartup<Startup>();
-       });

@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "Ndxn4zfWbBHgl+IN63dAoZI+JIsOZlPNWA1oqE4ONVX0tlhV+Z6IDtrLAZ+dpBQAcCVLzT3bz7NlyKyTIzCkag==",
+  "dgSpecHash": "MB90OSvhtN8+3vpRiV6Jm0JeRbDAvoWQqzSgyVmBgIXiRDNm5lxl2Hnw44evbf5SqTe1p2mQL5Jza2A0KOCR6A==",
   "success": true,
   "projectFilePath": "C:\\junior-analyst\\SensorProject\\SensorProject\\SensorProject.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\luisa\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
-    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
@@ -20,7 +18,6 @@
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\luisa\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.16.1\\microsoft.visualstudio.azure.containers.tools.targets.1.16.1.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\luisa\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
